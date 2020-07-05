@@ -28,7 +28,7 @@ app.get('/test', function (req, res) {
 })
 
 ///
- // Require the Aylien npm package:
+// Require the Aylien npm package:
 var aylien = require("aylien_textapi");
 
 
@@ -36,4 +36,4 @@ var aylien = require("aylien_textapi");
 var textapi = new aylien({
     application_id: "d25242ea",
     application_key: "df917bef0f6276eff776290e257caba1"
-  });
+});
