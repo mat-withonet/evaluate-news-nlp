@@ -1,3 +1,8 @@
+///
+const dotenv = require('dotenv');
+dotenv.config();
+
+
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
@@ -21,3 +26,14 @@ app.listen(8080, function () {
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
+
+///
+ // Require the Aylien npm package:
+var aylien = require("aylien_textapi");
+
+
+// Set aylien API credentials
+var textapi = new aylien({
+    application_id: "d25242ea",
+    application_key: "df917bef0f6276eff776290e257caba1"
+  });
