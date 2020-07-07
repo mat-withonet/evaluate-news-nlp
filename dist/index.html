@@ -3,13 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-    </head>
-
+    <link href="main.css" rel="stylesheet"></head>
+    <link rel="shortcut icon" href="#"> <!-- By default, the browser is looking for the favicon.ico but instead of adding it I got rid of the error by putting this line in here -->
     <body>
 
         <header>
@@ -23,21 +18,66 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
+                <p><br>
+                    Text entered will be analyzed, whereas URL entered will be tested for validity.
+                </p>
+            </section>
             <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Enter text or URL here">
+                    <input type="submit" name="" value="submit">
+                </form>
+            </section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <ul>
+                    <li>
+                        <p id="formResults">Form Results:</p><br>
+                    </li>
+                    <li>
+                        <strong id="analysisText">Text entered:</strong>
+                        <div id="results"></div><br>
+                    </li>
+                    <li>
+                        <strong id="analysisText">Polarity:</strong>
+                        <div id="polarity"></div><br>
+                    </li>
+                    <li>
+                        <strong id="analysisText">Subjectivity:</strong>
+                        <div id="subjectivity"></div><br><br>
+                    </li>
+                    <li>
+                        <div id="errorMessage"></div>
+                        <div id="noErrorMessage"></div>
+                    </li>
+                </ul>
+                
             </section>
         </main>
 
         <footer>
             <p>This is a footer</p>
-        </footer>
-
-   <!--<script type="text/javascript" src="main.js"></script></body> -->
+        </footer>        
+        <script>     
+            // Check that service workers are supported     
+            if ('serviceWorker' in navigator) {         
+            // Use the window load event to keep the page load performant         
+                window.addEventListener('load', () => {             
+                    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                        // Registration was successful
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(error) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', error);
+                     });
+                    });
+                };       
+        </script>
+        <!-- Trying to not have form results data on the page, when a user refreshes the page -->
+        <script>
+            if ( window.history.replaceState ) {
+              window.history.replaceState( null, null, window.location.href );
+            }
+        </script>                    
+    <script type="text/javascript" src="main.js"></script></body>
 </html>
