@@ -4,7 +4,6 @@ function handleSubmit(event) {
     event.preventDefault();
     console.log("handleSubmit (1): handleSubmit entered, checking input for url/no-url");
 
-    //postData("http://localhost:8080/add", {"hi": "from browser"});
     const userInput = document.getElementById('name').value;
     
     checkURL(userInput);
@@ -13,7 +12,6 @@ function handleSubmit(event) {
 };
 
 function checkURL(userInput) {
-  // Check for valid URL (from: https://github.com/ogt/valid-url)
   if (validUrl.isUri(userInput)){
     console.log("checkURL (1): is a url", userInput);
     document.getElementById('noErrorMessage').innerHTML = "This is a valid URL";
@@ -47,7 +45,6 @@ const postData = async (url = '', data = {}) => {
         document.getElementById('results').innerHTML = responseData.input;
         document.getElementById('polarity').innerHTML = responseData.userPolarity;
         document.getElementById('subjectivity').innerHTML = responseData.userSubjectivity;
-        //await updateUI();
         return responseData;
     } catch(error) {
         console.log('error', error);
@@ -57,4 +54,4 @@ const postData = async (url = '', data = {}) => {
 
 export { handleSubmit,
         checkURL
-       } // export is what allows us to import the file within the index.js file
+       } 

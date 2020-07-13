@@ -1,7 +1,4 @@
-// Got these tests from Jests getting started docs: https://jestjs.io/docs/en/getting-started.html
-
-
-// In the console, run: npm run test1
+// Jest Test
 
 import { checkURL } from './formHandler'
 

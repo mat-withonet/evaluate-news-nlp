@@ -1,5 +1,4 @@
-// Got these tests from Jests getting started docs: https://jestjs.io/docs/en/getting-started.html
-
+// Jest Test
 
 const sum = require('./sum');
 
