@@ -6,6 +6,7 @@ function handleSubmit(event) {
     checkURL(userInput);
 };
 
+// Found this to check for a valid URL --> from: https://github.com/ogt/valid-url
 function checkURL(userInput) {
     if (validUrl.isUri(userInput)) {
         document.getElementById('noErrorMessage').innerHTML = "This is a valid URL";
