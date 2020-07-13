@@ -12,7 +12,8 @@ section {
     max-width: 800px;
     margin: 50px auto;
 }
-h1{
+
+h1 {
     color: black;
     padding: 0;
     font-size: 40px;
@@ -21,15 +22,7 @@ h1{
 
 }
 
-.results {
-    color: black;
-    padding: 0;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: left;
-}
-
-#analysisText {
+strong {
     color: black;
     font-weight: bold; 
     padding: 0;
@@ -38,24 +31,7 @@ h1{
     text-align: left;
 }
 
-#results {
-    color: black;
-    padding: 0;
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: left;
-}
-
-#polarity {
-    color: black;
-    padding: 0;
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: left;
-}
-
-#subjectivity {
-    color: black;
+.output{
     padding: 0;
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

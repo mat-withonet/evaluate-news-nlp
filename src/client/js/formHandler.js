@@ -15,7 +15,6 @@ function checkURL(userInput) {
   if (validUrl.isUri(userInput)){
     document.getElementById('noErrorMessage').innerHTML = "This is a valid URL";
     document.getElementById('results').innerHTML = ""; 
-    //delete this 
     document.getElementById('subjectivity_confidence').innerHTML = ""   
     document.getElementById('polarity').innerHTML = "";
     document.getElementById('subjectivity').innerHTML = "";
@@ -42,7 +41,6 @@ const postData = async (url = '', data = {}) => {
     try {
         const responseData = await response.json();
         document.getElementById('results').innerHTML = responseData.input;
-        //delete this
         document.getElementById('subjectivity_confidence').innerHTML = responseData.subjectivityConfidence;
         document.getElementById('polarity').innerHTML = responseData.userPolarity;
         document.getElementById('subjectivity').innerHTML = responseData.userSubjectivity;
