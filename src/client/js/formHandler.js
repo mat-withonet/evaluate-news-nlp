@@ -7,28 +7,28 @@ function handleSubmit(event) {
 };
 
 function checkURL(userInput) {
-  if (validUrl.isUri(userInput)){
-    document.getElementById('noErrorMessage').innerHTML = "This is a valid URL";
-  }
-  // Conduct aylien API text analysis
-  else {
-      console.log("checkURL (1): not a url", userInput);
-      console.log("checkURL (2): sending input to backendn for analysis");
-      postData("http://localhost:8080/analysis", {"userResponse": userInput});
-  }
+    if (validUrl.isUri(userInput)) {
+        document.getElementById('noErrorMessage').innerHTML = "This is a valid URL";
+    }
+    // Conduct aylien API text analysis
+    else {
+        console.log("checkURL (1): not a url", userInput);
+        console.log("checkURL (2): sending input to backendn for analysis");
+        postData("http://localhost:8080/analysis", { "userResponse": userInput });
+    }
 };
 
-const postData = async (url = '', data = {}) => { 
+const postData = async (url = '', data = {}) => {
     const response = await fetch(url, {
-        method: 'POST', 
+        method: 'POST',
         credentials: 'same-origin',
         headers: {
-            'Content-Type':'application/json',
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data), 
+        body: JSON.stringify(data),
     });
     // return await response.json();
-    
+
     try {
         const responseData = await response.json();
         document.getElementById('results').innerHTML = responseData.input;
@@ -36,12 +36,13 @@ const postData = async (url = '', data = {}) => {
         document.getElementById('polarity').innerHTML = responseData.userPolarity;
         document.getElementById('subjectivity').innerHTML = responseData.userSubjectivity;
         return responseData;
-    } catch(error) {
+    } catch (error) {
         console.log('error', error);
     };
 };
 
 
-export { handleSubmit,
-        checkURL
-       } 
+export {
+    handleSubmit,
+    checkURL
+} 
