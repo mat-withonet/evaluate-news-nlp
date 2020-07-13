@@ -9,10 +9,6 @@ function handleSubmit(event) {
 function checkURL(userInput) {
   if (validUrl.isUri(userInput)){
     document.getElementById('noErrorMessage').innerHTML = "This is a valid URL";
-    document.getElementById('results').innerHTML = ""; 
-    document.getElementById('subjectivity_confidence').innerHTML = ""   
-    document.getElementById('polarity').innerHTML = "";
-    document.getElementById('subjectivity').innerHTML = "";
   }
   // Conduct aylien API text analysis
   else {
