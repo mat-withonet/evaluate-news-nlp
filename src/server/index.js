@@ -58,6 +58,7 @@ function makeResponse(formInput, alyienResponse){
   const response = {
     "input": formInput,
     "userPolarity": alyienResponse.polarity,
+    "subjectivityConfidence": alyienResponse.subjectivity_confidence,
     "userSubjectivity": alyienResponse.subjectivity
   };
   return response;

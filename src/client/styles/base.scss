@@ -12,8 +12,16 @@ section {
     max-width: 800px;
     margin: 50px auto;
 }
+h1{
+    color: black;
+    padding: 0;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
 
-#formResults {
+}
+
+.results {
     color: black;
     padding: 0;
     font-size: 20px;

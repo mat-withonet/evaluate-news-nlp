@@ -11,7 +11,7 @@
 
     <h1>
         Evaluate News 
-    </h1>
+    </h1> <br>
     <main>
         <section>
             <p><br>
@@ -25,23 +25,27 @@
             </form>
         </section>
 
-        <section>
+        <section class=results>
             <ul>
                 <li>
-                    <p id="formResults">Form Results:</p><br>
+                    <p id="formResults">Results from URL:</p><br>
                 </li>
                 <li>
                     <strong id="analysisText">Text entered:</strong>
                     <div id="results"></div><br>
                 </li>
-               <!-- <li>
+               <li>
                     <strong id="analysisText">Polarity:</strong>
                     <div id="polarity"></div><br>
                 </li>
                 <li>
+                    <strong id=analysisText>Subjectivity Confidence </strong>
+                    <div id=subjectivity_confidence></div><br><br>
+                </li>
+                <li>
                     <strong id="analysisText">Subjectivity:</strong>
                     <div id="subjectivity"></div><br><br>
-                </li>-->
+                </li>
                 <li>
                     <div id="errorMessage"></div>
                     <div id="noErrorMessage"></div>
@@ -55,25 +59,12 @@
         <p>This is a footer</p>
     </footer>
     <script>
-        // Check that service workers are supported     
         if ('serviceWorker' in navigator) {
-            // Use the window load event to keep the page load performant         
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
-                    // Registration was successful
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function (error) {
-                    // registration failed :(
-                    console.log('ServiceWorker registration failed: ', error);
+                navigator.serviceWorker.register('/service-worker.js').then(function (registration) {    
                 });
             });
         };       
-    </script>
-    <!-- Trying to not have form results data on the page, when a user refreshes the page -->
-    <script>
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
     </script>
 <script type="text/javascript" src="main.js"></script></body>
 
