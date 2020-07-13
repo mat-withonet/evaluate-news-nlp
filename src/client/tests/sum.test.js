@@ -1,4 +1,4 @@
-// Jest Test
+// Jest Test from jest website
 
 const sum = require('./sum');
 
