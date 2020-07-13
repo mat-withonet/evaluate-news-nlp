@@ -2,13 +2,8 @@ var validUrl = require('valid-url');
 
 function handleSubmit(event) {
     event.preventDefault();
-    console.log("handleSubmit (1): handleSubmit entered, checking input for url/no-url");
-
     const userInput = document.getElementById('name').value;
-    
     checkURL(userInput);
-
-    console.log("handleSubmit (2): handleSubmit done");
 };
 
 function checkURL(userInput) {
