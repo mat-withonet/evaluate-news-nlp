@@ -1,9 +1,10 @@
-// Jest Test from jest's website
+// Testing
 
 import { checkURL } from './formHandler'
 
-test('This function does not return anything it is expected to be undefined', () => {
-  expect(checkURL()).toBeUndefined();
+test('check that the URL is Valid', () => {
+  expect(checkURL('https://www.udacity.com/')).toBe("");
+  end();
 });
 
 

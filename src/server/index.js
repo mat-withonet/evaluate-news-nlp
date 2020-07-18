@@ -16,8 +16,6 @@ var textapi = new aylien({
 
 const app = express();
 
-
-
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,12 +27,11 @@ app.use(cors());
 app.use(express.static('dist'));
 
 //Setup Server 
-const port = 8080; // We set our port
-
-const server = app.listen(port, listening);
+//Make the port 8080
+const server = app.listen(8080, listening);
 
 function listening() {
-  console.log(`server running on local host: ${port}`);
+  console.log("server running on local host: 8080");
 }
 
 //Setup Express route

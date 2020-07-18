@@ -1,4 +1,3 @@
-//import { checkForName } from './js/nameChecker'
 import { handleSubmit, checkURL } from './js/formHandler'
 
 import './styles/base.scss'
