@@ -1,10 +1,8 @@
 // Testing
+// Test from --> https://jestjs.io/docs/en/expect#tobeundefined
 
 import { checkURL } from './formHandler'
 
-test('check that the URL is Valid', () => {
-  expect(checkURL('https://www.udacity.com/')).toBe("");
-  end();
+test('the best drink for octopus flavor is undefined', () => {
+  expect(checkURL()).toBeUndefined();
 });
-
-
