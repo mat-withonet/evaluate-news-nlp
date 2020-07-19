@@ -1,5 +1,4 @@
 // Testing
-// Test from --> https://jestjs.io/docs/en/expect#tobeundefined
 
 import { checkURL } from './formHandler'
 

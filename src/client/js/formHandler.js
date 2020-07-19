@@ -1,3 +1,4 @@
+
 var validUrl = require('valid-url');
 
 function handleSubmit(event) {
@@ -10,14 +11,14 @@ function handleSubmit(event) {
 function checkURL(userInput) {
     if (validUrl.isUri(userInput)) {
         document.getElementById('noErrorMessage').innerHTML = "Looks like a URL";
+    } else {
+        alert("Please enter Valid URL")
     }
     // Conduct aylien API text analysis
-    else {
-        console.log("checkURL (1): not a url", userInput);
         console.log("checkURL (2): sending input to backend for analysis");
         postData("http://localhost:8080/analysis", { "userResponse": userInput });
-    }
-};
+    };
+    
 
 const postData = async (url = '', data = {}) => {
     const response = await fetch(url, {
@@ -43,6 +44,8 @@ const postData = async (url = '', data = {}) => {
 
 
 export {
+    checkURL,
     handleSubmit,
-    checkURL
 } 
+
+
